@@ -34,7 +34,6 @@
       downloadEl.innerHTML = "";
 
       try {
-        // ✅ Your Render backend URL
         const res = await fetch("https://ytmp3-online-1.onrender.com/download", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -45,7 +44,6 @@
 
         const data = await res.json();
         statusEl.textContent = "✅ Conversion complete!";
-        // Full download link
         downloadEl.innerHTML = `<a href="https://ytmp3-online-1.onrender.com${data.file}" class="text-cyan-400 underline" target="_blank">Download MP3</a>`;
       } catch (err) {
         statusEl.textContent = "❌ Error: " + err.message;
